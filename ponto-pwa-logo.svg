@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Brasão da Prefeitura -->
+  <g fill="#333333">
+    <!-- Coroa superior -->
+    <path d="M100,20 L100,20 C100,20 80,25 60,20 C60,20 60,30 70,35 L130,35 C140,30 140,20 140,20 C120,25 100,20 100,20 Z" />
+    
+    <!-- Torres da coroa -->
+    <rect x="65" y="15" width="10" height="10" />
+    <rect x="80" y="15" width="10" height="10" />
+    <rect x="95" y="15" width="10" height="10" />
+    <rect x="110" y="15" width="10" height="10" />
+    <rect x="125" y="15" width="10" height="10" />
+    
+    <!-- Escudo central -->
+    <path d="M70,35 L130,35 L130,105 C130,125 100,135 100,135 C100,135 70,125 70,105 Z" fill="white" stroke="#333333" stroke-width="2" />
+    
+    <!-- Barril central -->
+    <path d="M85,50 L115,50 C120,50 120,55 120,60 L120,80 C120,85 115,90 115,90 L85,90 C85,90 80,85 80,80 L80,60 C80,55 80,50 85,50 Z" fill="#333333" />
+    
+    <!-- Detalhes do barril -->
+    <rect x="83" y="60" width="34" height="5" fill="white" />
+    <rect x="83" y="75" width="34" height="5" fill="white" />
+    
+    <!-- Ramos laterais -->
+    <path d="M70,50 C50,70 50,90 50,90 C60,80 70,85 70,90 C60,100 50,100 50,110 L70,105" fill="none" stroke="#333333" stroke-width="2" />
+    <path d="M130,50 C150,70 150,90 150,90 C140,80 130,85 130,90 C140,100 150,100 150,110 L130,105" fill="none" stroke="#333333" stroke-width="2" />
+    
+    <!-- Faixa inferior -->
+    <path d="M60,115 C60,115 100,125 140,115 L145,125 C145,125 100,140 55,125 Z" />
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+{
+  "name": "ponto-pwa",
+  "version": "1.0.0",
+  "description": "Progressive Web App para registro de ponto",
+  "main": "ponto-pwa-html.html",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "http-server -p 8080"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "html-loader": "^5.1.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
