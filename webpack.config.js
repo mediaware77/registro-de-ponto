@@ -1,5 +1,5 @@
 const path = require('path');
-
+ 
 module.exports = {
   entry: './ponto-pwa-html.html',
   output: {
