@@ -7,7 +7,7 @@
     <title>Sistema de Registro de Ponto</title>
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <link rel="apple-touch-icon" href="./icons/icon-192x192.png">
     <style>
         * {
             margin: 0;
@@ -350,7 +350,27 @@
                                     errorMsg = 'Permissão para geolocalização foi negada pelo usuário.';
                                     break;
                                 case error.POSITION_UNAVAILABLE:
-                                    errorMsg = 'Informação de localização indisponível.';
+                                    errorMsg = 'Informação de localização indisponível. Tentando novamente com precisão reduzida...';
+                                    // Tentar novamente com configurações diferentes
+                                    navigator.geolocation.getCurrentPosition(
+                                        position => {
+                                            statusMessage.textContent = '';
+                                            const coords = {
+                                                latitude: position.coords.latitude,
+                                                longitude: position.coords.longitude,
+                                                accuracy: position.coords.accuracy
+                                            };
+                                            console.log('Localização obtida com sucesso após nova tentativa:', coords);
+                                            resolve(coords);
+                                        },
+                                        fallbackError => {
+                                            errorMsg = 'Não foi possível obter sua localização mesmo após nova tentativa. Verifique suas configurações de GPS.';
+                                            statusMessage.textContent = errorMsg;
+                                            resolve(null);
+                                        },
+                                        { enableHighAccuracy: false, timeout: 30000, maximumAge: 120000 }
+                                    );
+                                    return; // Importante: retornar para não executar o código abaixo
                                     break;
                                 case error.TIMEOUT:
                                     errorMsg = 'Tempo esgotado ao tentar obter localização.';
@@ -363,9 +383,9 @@
                             resolve(null); // Resolver com null em caso de erro
                         },
                         { 
-                            enableHighAccuracy: true, 
-                            timeout: 15000, 
-                            maximumAge: 0 
+                            enableHighAccuracy: false, // Mudando para false para evitar problemas de POSITION_UNAVAILABLE
+                            timeout: 30000, // Aumentando o timeout para dar mais tempo
+                            maximumAge: 60000 // Permitindo usar cache de localização de até 1 minuto
                         }
                     );
                 } else {
