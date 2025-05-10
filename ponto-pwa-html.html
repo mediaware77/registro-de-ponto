@@ -362,7 +362,11 @@
                             statusMessage.textContent = errorMsg;
                             resolve(null); // Resolver com null em caso de erro
                         },
-                        { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
+                        { 
+                            enableHighAccuracy: true, 
+                            timeout: 15000, 
+                            maximumAge: 0 
+                        }
                     );
                 } else {
                     console.error('Geolocalização não é suportada neste navegador.');

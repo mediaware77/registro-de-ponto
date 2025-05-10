@@ -1,0 +1,17 @@
+{
+  "name": "Sistema de Registro de Ponto",
+  "short_name": "Registro Ponto",
+  "description": "Sistema de registro de ponto para servidores públicos",
+  "start_url": "ponto-pwa-html.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
