@@ -1,0 +1,1 @@
+$(cat /Users/melque/Projetos/ponto/ponto-pwa-readme.md)

@@ -1,0 +1,1 @@
+$(cat /Users/melque/Projetos/ponto/service-worker.js)
